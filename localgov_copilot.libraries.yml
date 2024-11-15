@@ -1,0 +1,10 @@
+chat:
+  css:
+    theme:
+      css/chat.css: {}
+  js:
+    js/localgov_copilot.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once

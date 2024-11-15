@@ -1,0 +1,5 @@
+name: 'Localgov Copilot'
+type: module
+description: 'Integrate CoPilot Studio with your website'
+package: Custom
+core_version_requirement: ^10 || ^11

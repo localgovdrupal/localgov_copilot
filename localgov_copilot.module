@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function localgov_copilot_theme() {
+  return [
+    'localgov_copilot_chat' => [
+      'variables' => [
+        'header' => '',
+        'embed_url' => '',
+      ],
+    ],
+  ];
+}
