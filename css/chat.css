@@ -8,6 +8,14 @@
   width: 400px;
   box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
   font-size: 12px;
+  min-height: 1rem;
+  transition-property: min-height;
+  transition-duration: .25s;
+  transition-timing-function: linear;
+}
+
+#live-chat.expanded {
+  min-height: 75vh;
 }
 
 #live-chat header {
@@ -54,9 +62,6 @@
   display: none;
   background: #fcfcfc;
   height: 0;
-  transition-property: height;
-  transition-duration: .25s;
-  transition-timing-function: ease;
 }
 
 #live-chat.expanded .chat {

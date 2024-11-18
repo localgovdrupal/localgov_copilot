@@ -87,8 +87,8 @@ class ChatBlock extends BlockBase {
     $block['#theme'] = 'localgov_copilot_chat';
     $block['#attached']['library'][] = 'localgov_copilot/chat';
     $block['#header'] = $this->configuration['label'];
-    $block['#embed_url'] = $this->configuration['embed_url'];
     $block['#attached']['drupalSettings']['localgov_copilot']['toggle_state'] = $this->configuration['toggle_state'];
+    $block['#attached']['drupalSettings']['localgov_copilot']['frame_url'] = $this->configuration['embed_url'];
 
     return $block;
   }
