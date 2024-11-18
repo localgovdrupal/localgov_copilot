@@ -5,23 +5,24 @@
   // Logic for minimizing the chatbot.
   $(document).ready(() => {
 
-    let chatStatus = 'true';
+    let chatStatus = 'false';
     if (drupalSettings.localgov_copilot.toggle_state == 'remember') {
-      chatStatus = localStorage.getItem("copilot_livechat.closed");
+      chatStatus = localStorage.getItem("copilot_livechat.open");
     }
     else if (drupalSettings.localgov_copilot.toggle_state == 'open') {
-      chatStatus = 'false';
+      chatStatus = 'true';
     }
-    if (chatStatus == 'false') {
-      $('#live-chat .chat').show();
+    if (chatStatus == 'true') {
+      $('#live-chat #copilot-livechat').show();
     }
-    $('#live-chat header').click(function() {
-      $('.chat').toggle(function () {
-        localStorage.setItem("copilot_livechat.closed", localStorage.getItem("copilot_livechat.closed") == 'true' ? 'false' : 'true');
-        $(this).animate({
-          display: 'block',
-        }, 100);
-      })
+    $('#live-chat button').click(function() {
+
+      const chat_widget = $('#live-chat');
+
+      chat_widget.toggleClass('expanded');
+      const expanded = chat_widget.class('expanded');
+      localStorage.setItem("copilot_livechat.open", expanded);
+      $(this).attr("aria-expanded", expanded);
     });
   });
 
