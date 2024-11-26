@@ -2,16 +2,8 @@
 
 namespace Drupal\localgov_copilot\Plugin\Block;
 
-use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Form\FormBuilderInterface;
-use Drupal\Core\Form\FormState;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Link;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\ai_chatbot\Form\ChatForm;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a ai form block.
@@ -22,7 +14,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * )
  */
 class ChatBlock extends BlockBase {
-
 
   /**
    * {@inheritdoc}
@@ -60,14 +51,6 @@ class ChatBlock extends BlockBase {
     ];
 
     return $form;
-  }
-
-  public function blockValidate($form, FormStateInterface $form_state) {
-
-    //if (!UrlHelper::isValid($form_state->getValue('embed_url'), TRUE)) {
-    //  $form_state->setErrorByName('embed_url', "Please provide a valid Copilot Studio URL.");
-    //}
-
   }
 
   /**

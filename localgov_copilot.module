@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Localgov Copilot module hooks.
+ */
+
+/**
  * Implements hook_theme().
  */
 function localgov_copilot_theme() {
