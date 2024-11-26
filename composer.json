@@ -1,5 +1,5 @@
 {
-  "name": "webcurl/localgov_copilot",
+  "name": "localgovdrupal/localgov_copilot",
   "description": "Embed Copilot Studio widget on a website",
   "type": "drupal-module",
   "license": "GPL-2.0-or-later",
