@@ -2,6 +2,8 @@
 
 Provides a widget to add [Copilot Studio](https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio) AI chat to your website.
 
+![Chat widget displaying at bottom of generic council web page](/screenshots/widget-expanded.png?raw=true)
+
 ## Installation
 * Enable the module
 * Create an instance of the Localgov Copilot block in one of the site footer regions.
