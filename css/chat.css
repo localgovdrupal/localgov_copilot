@@ -14,10 +14,6 @@
   transition-timing-function: linear;
 }
 
-#live-chat.expanded {
-  min-height: 75vh;
-}
-
 #live-chat header {
   cursor: pointer;
   border-radius: 5px 5px 0 0;
@@ -66,14 +62,11 @@
 
 #live-chat.expanded .chat {
   display: block !important;
-  height: 75vh;
+  height: auto;
 }
 
-.chat iframe {
-  overflow-x: hidden;
-  overflow-y: auto;
-  height: 100%;
-  width: 100%;
+.webchat__basic-transcript__scrollable {
+  max-height: 75vh;
 }
 
 .chat-message .loader {

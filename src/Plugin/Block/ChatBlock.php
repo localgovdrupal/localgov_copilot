@@ -20,7 +20,7 @@ class ChatBlock extends BlockBase {
    */
   public function defaultConfiguration() {
     return [
-      'embed_url' => '',
+      'token_endpoint' => '',
       'toggle_state' => 'remember',
     ];
   }
@@ -30,12 +30,11 @@ class ChatBlock extends BlockBase {
    */
   public function blockForm($form, FormStateInterface $form_state) {
 
-    $form['embed_url'] = [
+    $form['token_endpoint'] = [
       '#type' => 'url',
-      '#title' => $this->t('Copilot embed URL'),
-      '#description' => $this->t('URL from Copilot Studio iframe embed code'),
-      '#default_value' => $this->configuration['embed_url'],
-
+      '#title' => $this->t('Token endpoint'),
+      '#description' => $this->t('Obtain from Channels > Mobile app in Copilot Studio.'),
+      '#default_value' => $this->configuration['token_endpoint'],
     ];
 
     $form['toggle_state'] = [
@@ -57,8 +56,8 @@ class ChatBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
-    $this->configuration['embed_url'] = $form_state->getValue('embed_url');
     $this->configuration['toggle_state'] = $form_state->getValue('toggle_state');
+    $this->configuration['token_endpoint'] = $form_state->getValue('token_endpoint');
   }
 
   /**
@@ -67,11 +66,16 @@ class ChatBlock extends BlockBase {
   public function build() {
     $block = [];
 
+    // Not configured...
+    if (empty($this->configuration['token_endpoint'])) {
+      return $block;
+    }
+
     $block['#theme'] = 'localgov_copilot_chat';
     $block['#attached']['library'][] = 'localgov_copilot/chat';
     $block['#header'] = $this->configuration['label'];
     $block['#attached']['drupalSettings']['localgov_copilot']['toggle_state'] = $this->configuration['toggle_state'];
-    $block['#attached']['drupalSettings']['localgov_copilot']['frame_url'] = $this->configuration['embed_url'];
+    $block['#attached']['drupalSettings']['localgov_copilot']['token_endpoint'] = $this->configuration['token_endpoint'];
 
     return $block;
   }
