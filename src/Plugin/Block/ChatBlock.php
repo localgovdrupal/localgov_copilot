@@ -180,7 +180,7 @@ class ChatBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
     $avatar_image = match($this->configuration['bot_avatar_display']) {
       'none', 'text_only' => NULL,
-      'site_logo' => \Drupal::theme()->getActiveTheme()->getLogo(),
+      'site_logo' => theme_get_setting('logo.url'),
       'custom' => File::load($this->configuration['bot_avatar_custom_image'][0])?->createFileUrl(),
     };
 
