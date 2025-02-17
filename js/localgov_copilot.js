@@ -38,7 +38,11 @@
     // Please visit https://microsoft.github.io/BotFramework-WebChat for customization samples.
     const styleOptions = {
       // Hide upload button.
-      hideUploadButton: true
+      hideUploadButton: true,
+      botAvatarImage: drupalSettings.localgov_copilot.bot_avatar_image,
+      botAvatarInitials: drupalSettings.localgov_copilot.bot_avatar_initials
+      //userAvatarImage: 'https://github.com/compulim.png?size=64',
+      //userAvatarInitials: 'WC'
     };
 
     // Specifies the token endpoint URL.
