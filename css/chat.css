@@ -8,9 +8,8 @@
   width: 400px;
   box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
   font-size: 12px;
-
-  max-height: 4rem;
-  transition-property: max-height;
+  min-height: 1rem;
+  transition-property: min-height;
   transition-duration: .25s;
   transition-timing-function: linear;
 }
@@ -59,10 +58,6 @@
   display: none;
   background: #fcfcfc;
   height: 0;
-}
-
-#live-chat.expanded {
-  max-height: 80vh;
 }
 
 #live-chat.expanded .chat {
