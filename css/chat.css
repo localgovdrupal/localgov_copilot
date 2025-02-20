@@ -77,6 +77,11 @@ input[type=text].webchat__send-box-text-box__input:focus {
   box-shadow: inset 0 0 0 3px;
 }
 
+/* Undo localgov_base img { display: block } */
+img.webchat__render-markdown__external-link-icon {
+  display: inline;
+}
+
 .chat-message .loader {
   --chat-loader: no-repeat radial-gradient(circle closest-side, #000 90%, #0000);
 
